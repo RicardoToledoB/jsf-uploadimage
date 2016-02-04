@@ -32,7 +32,7 @@ public class UsuarioBean implements Serializable {
 
     @Inject
     private UsuarioServiceImpl uService;
-
+    private Usuario usuarioView;
     private Usuario usuario;
     private List<Usuario> lista;
 
@@ -44,6 +44,7 @@ public class UsuarioBean implements Serializable {
     public void init() {
         usuario = new Usuario();
         //lista=new ArrayList<Usuario>();
+        usuarioView = new Usuario();
     }
 
     public Usuario getUsuario() {
@@ -71,6 +72,17 @@ public class UsuarioBean implements Serializable {
         this.uploadedFile = uploadedFile;
     }
 
+    public Usuario getUsuarioView() {
+        return usuarioView;
+    }
+
+    public String setUsuarioView(Usuario usuarioView) {
+        this.usuarioView = uService.find(usuarioView);
+        return "view?faces-redirect=true";
+    }
+
+    
+    
     public void upload() {
         System.out.println("File type: " + uploadedFile.getContentType());
         System.out.println("File name: " + uploadedFile.getName());
