@@ -5,6 +5,7 @@
  */
 package com.ricardo.proyecto.model;
 
+import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 import static org.eclipse.persistence.expressions.ExpressionOperator.Log;
+import org.primefaces.model.DefaultStreamedContent;
 
 /**
  *
@@ -59,6 +61,7 @@ public class Usuario implements Serializable{
 
     public byte[] getFoto() {
         return foto;
+
     }
 
     public void setFoto(byte[] foto) {
