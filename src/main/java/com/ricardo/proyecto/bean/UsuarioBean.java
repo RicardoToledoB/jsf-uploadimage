@@ -43,7 +43,6 @@ public class UsuarioBean implements Serializable {
     @PostConstruct
     public void init() {
         usuario = new Usuario();
-        //lista=new ArrayList<Usuario>();
         usuarioView = new Usuario();
     }
 
